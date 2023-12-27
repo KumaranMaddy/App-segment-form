@@ -11,9 +11,6 @@ const NewSchemaDropdown = ({ setArray, array }) => {
       console.log(Object.values(element)[0], Object.values(elementToBeRemove)[0]);
       return;
     }
-    const updatedArray = array.filter((ele) => Object.values(ele)[0] !== Object.values(elementToBeRemove)[0]);
-    setArray([...updatedArray, element]);
-    console.log(array);
   };
 
   return array.length !== 0 && (
@@ -26,10 +23,7 @@ const NewSchemaDropdown = ({ setArray, array }) => {
               <span className="add-schema-text">
                 {Object.values(element)[0]} {openIndex === index ? <i className="fa fa-chevron-up"></i> : <i className="fa fa-chevron-down"></i>}
               </span>
-            </div>
-            {openIndex === index && <NewSchemaOption editNewSchema={editNewSchema} element={element} setOpenIndex={setOpenIndex} />}
-          </div>
-          <div className="dash-icon">
+              <div className="dash-icon">
             <i className="fa fa-minus"></i>
           </div>
         </div>
